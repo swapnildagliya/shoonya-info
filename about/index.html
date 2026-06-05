@@ -46,11 +46,11 @@
   --purple: #B564F7;
   --purple-deep: #7E4FBF;
   --purple-soft: #F5ECFF;
-  --ink: #1a1a1a;
+  --ink: #000000;
   --muted: #666;
   --muted-soft: #999;
   --border: #e4e0db;
-  --radius: 12px;
+  --radius: 0px;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'PT Serif', Georgia, serif; color: var(--ink); background: #fff; -webkit-font-smoothing: antialiased; }
@@ -64,14 +64,14 @@ body:not(.nl) [data-lang="nl"] { display: none; }
 .skip-link {
   position: absolute; left: -9999px; top: 0; background: var(--purple); color: #fff;
   padding: .5rem 1rem; font-size: .82rem; font-weight: 700; z-index: 100;
-  border-radius: 0 0 6px 6px;
+  border-radius: 0;
 }
 .skip-link:focus { left: 1rem; }
 
 /* Site nav */
 .site-nav {
   display: flex; align-items: center; gap: 1.5rem;
-  padding: .85rem 1.5rem; border-bottom: 1px solid var(--border);
+  padding: .85rem 1.5rem; border-bottom: 0.5px solid var(--border);
   position: sticky; top: 0; background: #fff; z-index: 50;
 }
 .site-nav__brand {
@@ -85,12 +85,12 @@ body:not(.nl) [data-lang="nl"] { display: none; }
   transition: color .15s; white-space: nowrap;
 }
 .site-nav__links a:hover, .site-nav__links a.active { color: var(--ink); }
-.lang-toggle { display: flex; border: 1px solid var(--border); border-radius: 99px; overflow: hidden; }
+.lang-toggle { display: flex; border: 1px solid var(--border); border-radius: 0; overflow: hidden; }
 .lang-btn {
   padding: .55rem .9rem; font-size: .72rem; font-weight: 700; letter-spacing: .06em;
   border: none; background: none; cursor: pointer; color: var(--muted); font-family: 'PT Serif', serif;
 }
-.lang-btn.active { background: #000; color: #fff; border-radius: 99px; }
+.lang-btn.active { background: #000; color: #fff; border-radius: 0; }
 @media (max-width: 600px) { .site-nav__links { display: none; } }
 
 /* Hero */
@@ -107,9 +107,9 @@ body:not(.nl) [data-lang="nl"] { display: none; }
 }
 .hero h1 {
   font-family: 'Marcellus', serif; font-weight: 400;
-  font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.1; margin: 0 0 1rem;
+  font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.1; margin: 0 0 1rem;
 }
-.hero h1 em { color: var(--purple); font-style: italic; }
+.hero h1 em { color: var(--purple); font-style: normal; }
 .hero-lead {
   font-size: 1.05rem; color: rgba(255,255,255,.72);
   max-width: 540px; margin: 0 auto; line-height: 1.6;
@@ -124,10 +124,10 @@ body:not(.nl) [data-lang="nl"] { display: none; }
 }
 .section-h2 {
   font-family: 'Marcellus', serif; font-weight: 400;
-  font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.15;
+  font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1.15;
   color: var(--ink); margin: 0 0 1.25rem;
 }
-.section-h2 em { color: var(--purple); font-style: italic; }
+.section-h2 em { color: var(--purple); font-style: normal; }
 @media (max-width: 480px) { .section { padding: 3rem 1rem; } }
 
 /* Why Shoonya — two-col layout */
@@ -141,14 +141,14 @@ body:not(.nl) [data-lang="nl"] { display: none; }
 .why-body strong { color: var(--ink); }
 
 /* Values band */
-.values-band { background: var(--purple-soft); padding: 4rem 1.5rem; }
+.values-band { background: #FAFAF8; padding: 4rem 1.5rem; }
 .values-inner { max-width: 1040px; margin: 0 auto; }
 .values-grid {
   display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 1.75rem;
 }
 @media (min-width: 600px) { .values-grid { grid-template-columns: repeat(2,1fr); } }
 @media (min-width: 960px) { .values-grid { grid-template-columns: repeat(3,1fr); } }
-.val-card { background: #fff; border-radius: var(--radius); padding: 1.4rem 1.5rem; }
+.val-card { background: #fff; border-radius: var(--radius); border: 0.5px solid #e4e0db; padding: 1.4rem 1.5rem; }
 .val-card__num { font-size: .62rem; font-weight: 700; letter-spacing: .14em; color: var(--purple); margin-bottom: .5rem; display: block; }
 .val-card h3 { font-family: 'Marcellus', serif; font-weight: 400; font-size: 1.15rem; color: var(--ink); margin: 0 0 .45rem; line-height: 1.2; }
 .val-card p { font-size: .88rem; color: #555; line-height: 1.6; margin: 0; }
@@ -164,7 +164,7 @@ body:not(.nl) [data-lang="nl"] { display: none; }
 @media (min-width: 720px) { .founders-grid { grid-template-columns: 1fr 1fr; } }
 .person {
   display: flex; flex-direction: column;
-  background: #faf9f7; border-radius: var(--radius); overflow: hidden;
+  background: #faf9f7; border-radius: var(--radius); border: 0.5px solid #e4e0db; overflow: hidden;
 }
 .person__photo { width: 100%; height: 320px; object-fit: cover; object-position: 50% 20%; display: block; }
 .person__body { padding: 1.5rem 1.75rem 1.75rem; }
@@ -200,25 +200,26 @@ body:not(.nl) [data-lang="nl"] { display: none; }
 .cta-section { padding: 4rem 1.5rem; }
 .cta-band {
   max-width: 1040px; margin: 0 auto;
-  background: var(--purple-soft); border-radius: var(--radius);
+  background: #000; border-radius: var(--radius);
   padding: 3rem 2rem; text-align: center;
 }
-.cta-band h2 { font-family: 'Marcellus', serif; font-weight: 400; font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.15; color: var(--ink); margin: .5rem 0 .75rem; }
-.cta-band h2 em { color: var(--purple); font-style: italic; }
-.cta-band p { font-size: .95rem; color: #555; max-width: 480px; margin: 0 auto 1.75rem; line-height: 1.55; }
+.cta-band h2 { font-family: 'Marcellus', serif; font-weight: 400; font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1.15; color: #fff; margin: .5rem 0 .75rem; }
+.cta-band h2 em { color: var(--purple); font-style: normal; }
+.cta-band p { font-size: .95rem; color: rgba(255,255,255,.65); max-width: 480px; margin: 0 auto 1.75rem; line-height: 1.55; }
 .cta-cluster { display: flex; flex-direction: column; align-items: center; gap: .65rem; }
 .btn-primary {
-  display: inline-block; background: var(--purple); color: #fff;
+  display: inline-block; background: transparent; color: #fff;
+  border: 1px solid #fff;
   font-size: .82rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
-  padding: .85rem 1.85rem; border-radius: 6px; text-decoration: none; transition: opacity .15s;
+  padding: .85rem 1.85rem; border-radius: 0; text-decoration: none; transition: background .2s, border-color .2s;
 }
-.btn-primary:hover { opacity: .88; }
+.btn-primary:hover { background: var(--purple); border-color: var(--purple); }
 .btn-text {
   font-size: .82rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
-  color: var(--purple-deep); border-bottom: 1.5px solid rgba(126,79,191,.4);
+  color: rgba(255,255,255,.7); border-bottom: 1.5px solid rgba(255,255,255,.3);
   padding-bottom: 2px; text-decoration: none; transition: color .15s, border-color .15s;
 }
-.btn-text:hover { color: var(--ink); border-color: var(--ink); }
+.btn-text:hover { color: #fff; border-color: #fff; }
 @media (max-width: 480px) { .cta-section { padding: 3rem 1rem; } .cta-band { padding: 2.5rem 1.25rem; } }
 
 /* Footer */
@@ -228,7 +229,8 @@ body:not(.nl) [data-lang="nl"] { display: none; }
   display: flex; justify-content: space-between; flex-wrap: wrap;
   gap: .75rem 1.5rem; font-size: .82rem; color: var(--muted);
 }
-.footer__brand { font-weight: 700; color: var(--ink); }
+.footer__brand { font-weight: 700; color: var(--ink); display: flex; align-items: center; gap: 7px; }
+.footer__brand .oo-mark { height: 13px; width: auto; filter: invert(1); opacity: 0.55; }
 .footer__nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
 .footer__nav a { color: var(--muted); }
 .footer__nav a:hover { color: var(--ink); }
@@ -246,7 +248,7 @@ body:not(.nl) [data-lang="nl"] { display: none; }
   <nav class="site-nav__links" aria-label="Site navigation">
     <a href="/about/" class="active"><span data-lang="en">About</span><span data-lang="nl">Over ons</span></a>
     <a href="/our-studios/"><span data-lang="en">Studios</span><span data-lang="nl">Studio's</span></a>
-    <a href="/try-a-class/"><span data-lang="en">Try a class</span><span data-lang="nl">Proefles</span></a>
+    <a href="https://www.shoonyadance.com/try-a-class/"><span data-lang="en">Try a class</span><span data-lang="nl">Proefles</span></a>
     <a href="/register/"><span data-lang="en">Register</span><span data-lang="nl">Inschrijven</span></a>
     <a href="https://schedule.shoonyadance.com/"><span data-lang="en">Schedule</span><span data-lang="nl">Rooster</span></a>
   </nav>
@@ -389,16 +391,16 @@ body:not(.nl) [data-lang="nl"] { display: none; }
           <span data-lang="en">Co-founder &amp; Director</span>
           <span data-lang="nl">Medeoprichter &amp; Directeur</span>
         </span>
-        <p class="person__bio" data-lang="en">Wim discovered salsa in the late 1980s, when the style was still largely unknown in Belgium. He started teaching in 1999, went full-time in 2004, and co-founded Shoonya Dance Centre in 2015.</p>
-        <p class="person__bio" data-lang="nl">Wim ontdekte salsa eind jaren 1980, toen de stijl nog grotendeels onbekend was in België. Hij begon les te geven in 1999, ging voltijds in 2004 en richtte Shoonya Dance Centre mede op in 2015.</p>
+        <p class="person__bio" data-lang="en">Wim discovered salsa in the late 1980s, at a time when the dance style was still largely unknown in Belgium and rapidly evolving worldwide. Driven by curiosity and passion, he trained extensively with a wide range of teachers, both nationally and internationally. He began teaching salsa in 1999, and by 2004, dance became his full-time profession. In 2015, he co-founded Shoonya Dance Centre, contributing significantly to its vision and growth.</p>
+        <p class="person__bio" data-lang="nl">Wim ontdekte salsa eind jaren 1980, op een moment dat de dansstijl nog grotendeels onbekend was in België en wereldwijd snel evolueerde. Gedreven door nieuwsgierigheid en passie trainde hij uitgebreid met een breed scala aan leerkrachten, zowel nationaal als internationaal. Hij begon salsales te geven in 1999 en in 2004 werd dans zijn voltijds beroep. In 2015 richtte hij Shoonya Dance Centre mede op en droeg hij significant bij aan de visie en groei ervan.</p>
         <details class="person__det">
           <summary class="person__toggle">
-            <span data-lang="en">Full bio</span>
-            <span data-lang="nl">Volledige bio</span>
+            <span data-lang="en">More</span>
+            <span data-lang="nl">Meer</span>
           </summary>
           <div class="person__full">
-            <p data-lang="en">Driven by curiosity and passion, Wim trained with teachers across Belgium and internationally, helping shape the salsa scene in Ghent over two decades. In 2025, as Shoonya continued to expand, he stepped back from active teaching. He remains deeply involved behind the scenes — contributing to the organisation, development, and long-term direction of the dance centre.</p>
-            <p data-lang="nl">Gedreven door nieuwsgierigheid en passie, trainde Wim met leerkrachten in heel België en internationaal en hielp hij de salsascène in Gent over twee decennia vormgeven. In 2025, terwijl Shoonya bleef groeien, stapte hij terug uit actief lesgeven. Hij blijft nauw betrokken achter de schermen — en draagt bij aan de organisatie, ontwikkeling en langetermijnrichting van het danscentrum.</p>
+            <p data-lang="en">In 2025, as the dance centre continued to expand, Wim stepped back from active teaching. He remains actively involved behind the scenes, contributing to the organisation, development, and long-term direction of Shoonya Dance Centre.</p>
+            <p data-lang="nl">In 2025, toen het danscentrum bleef groeien, stapte Wim terug uit actief lesgeven. Hij blijft actief betrokken achter de schermen en draagt bij aan de organisatie, ontwikkeling en langetermijnrichting van Shoonya Dance Centre.</p>
           </div>
         </details>
       </div>
@@ -451,7 +453,7 @@ body:not(.nl) [data-lang="nl"] { display: none; }
     <p data-lang="en">Walk in during an Open Door Day or the first week of the semester. No registration, no commitment — just show up.</p>
     <p data-lang="nl">Loop binnen tijdens een Open Deurdag of de eerste week van het semester. Geen inschrijving, geen verplichtingen — gewoon binnenwandelen.</p>
     <div class="cta-cluster">
-      <a href="/try-a-class/" class="btn-primary">
+      <a href="https://www.shoonyadance.com/try-a-class/" class="btn-primary">
         <span data-lang="en">Try a class for free →</span>
         <span data-lang="nl">Probeer een les gratis →</span>
       </a>
@@ -466,7 +468,7 @@ body:not(.nl) [data-lang="nl"] { display: none; }
 </main>
 
 <footer class="footer">
-  <span class="footer__brand">Shoonya Dance Centre</span>
+  <span class="footer__brand"><img class="oo-mark" src="/assets/shoonya-oo-mark-white.png" alt="">Shoonya Dance Centre<img class="oo-mark" src="/assets/shoonya-oo-mark-white.png" alt=""></span>
   <nav class="footer__nav" aria-label="Footer links">
     <a href="https://www.shoonyadance.com">shoonyadance.com</a>
     <a href="mailto:info@shoonyadance.com">info@shoonyadance.com</a>
