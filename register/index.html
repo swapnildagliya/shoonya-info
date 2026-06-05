@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Register / Inschrijving — Shoonya Dance Centre</title>
+<meta name="description" content="Register for dance classes at Shoonya Dance Centre for September 2026 – January 2027. 24 dance styles, 16 sessions. Stapelplein 41, Ghent.">
+<link rel="canonical" href="https://info.shoonyadance.com/register/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Register — Shoonya Dance Centre">
+<meta property="og:description" content="Register for dance classes at Shoonya Dance Centre. September 2026 – January 2027. 24 styles, all levels.">
+<meta property="og:url" content="https://info.shoonyadance.com/register/">
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/643161d3f0077c58bb466e03/7ea5a9db-4826-4fd1-9803-30aae8e55598/IMG_1881.JPG">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --purple: #B564F7;
+  --purple-soft: #F5ECFF;
+  --purple-deep: #7E4FBF;
+  --border: #e4e0db;
+  --muted: #666;
+  --radius: 10px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'PT Serif', serif; background: #fff; color: #1a1a1a; min-height: 100vh; -webkit-font-smoothing: antialiased; }
+
+/* Nav */
+.site-nav { display: flex; align-items: center; gap: 1.5rem; padding: .85rem 1.5rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: #fff; z-index: 50; }
+.site-nav__brand { font-family: 'Marcellus', serif; font-size: .95rem; letter-spacing: .06em; text-transform: uppercase; font-weight: 400; white-space: nowrap; margin-right: auto; text-decoration: none; color: #1a1a1a; }
+.site-nav__links { display: flex; gap: 1.25rem; }
+.site-nav__links a { font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .15s; white-space: nowrap; }
+.site-nav__links a:hover, .site-nav__links a.active { color: #1a1a1a; }
+.lang-toggle { display: flex; border: 1px solid var(--border); border-radius: 99px; overflow: hidden; }
+.lang-btn { padding: .55rem .9rem; font-size: .72rem; font-weight: 700; letter-spacing: .06em; border: none; background: none; cursor: pointer; color: var(--muted); font-family: 'PT Serif', serif; }
+.lang-btn.active { background: #000; color: #fff; border-radius: 99px; }
+@media (max-width: 600px) { .site-nav__links { display: none; } }
+
+/* Card area */
+.card-area { display: flex; align-items: center; justify-content: center; min-height: calc(100vh - 57px); padding: 2rem 1.5rem; }
+.card { max-width: 420px; width: 100%; text-align: center; }
+.logo { font-family: 'Marcellus', serif; font-size: 1rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 2.5rem; }
+.logo span { color: #000; }
+
+.early-label { display: inline-block; background: var(--purple-soft); color: var(--purple-deep); font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: .25rem .85rem; border-radius: 99px; margin-bottom: 1.25rem; }
+h1 { font-family: 'Marcellus', serif; font-weight: 400; font-size: 1.6rem; margin-bottom: .6rem; line-height: 1.15; }
+.subtitle { font-size: .88rem; color: var(--muted); margin-bottom: 2rem; line-height: 1.6; }
+.subtitle strong { color: #1a1a1a; }
+
+.form { display: flex; flex-direction: column; gap: .75rem; }
+.input-wrap { position: relative; }
+input[type="password"] { width: 100%; padding: .85rem 1rem; font-family: 'PT Serif', serif; font-size: .95rem; border: 1.5px solid var(--border); border-radius: var(--radius); outline: none; transition: border-color .15s; letter-spacing: .12em; text-align: center; }
+input[type="password"]:focus { border-color: var(--purple); }
+input[type="password"].error { border-color: #e24b4a; animation: shake .3s; }
+@keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
+.btn { background: #000; color: #fff; border: none; padding: .85rem; border-radius: var(--radius); font-family: 'PT Serif', serif; font-size: .82rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; cursor: pointer; transition: background .15s; }
+.btn:hover { background: var(--purple); }
+.error-msg { font-size: .78rem; color: #e24b4a; min-height: 1.2rem; }
+
+.opens-note { margin-top: 1.75rem; font-size: .78rem; color: var(--muted); }
+.countdown { font-family: 'Marcellus', serif; font-size: 1.1rem; color: #1a1a1a; margin-top: .35rem; letter-spacing: .04em; }
+
+.open-state { display: none; flex-direction: column; align-items: center; gap: 1rem; }
+.open-label { display: inline-block; background: #eaf3de; color: #3b6d11; font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: .25rem .85rem; border-radius: 99px; }
+.open-btn { display: inline-block; background: var(--purple); color: #fff; font-family: 'PT Serif', serif; font-size: .85rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; padding: .85rem 2rem; border-radius: var(--radius); text-decoration: none; transition: opacity .15s; }
+.open-btn:hover { opacity: .88; }
+.open-note { font-size: .78rem; color: var(--muted); }
+
+.age-note { font-size: .72rem; color: var(--muted); margin-top: 1.5rem; }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <a class="site-nav__brand" href="https://www.shoonyadance.com">Shoonya</a>
+  <nav class="site-nav__links" aria-label="Site navigation">
+    <a href="/about/" id="nav-about">About</a>
+    <a href="/our-studios/" id="nav-studios">Studios</a>
+    <a href="/try-a-class/" id="nav-try">Try a class</a>
+    <a href="/register/" class="active" id="nav-register">Register</a>
+    <a href="https://schedule.shoonyadance.com/" id="nav-schedule">Schedule</a>
+  </nav>
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button class="lang-btn" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="nl">NL</button>
+  </div>
+</header>
+
+<main class="card-area">
+  <div class="card">
+    <div class="logo"><span>Shoonya</span> Dance Centre</div>
+
+    <!-- EARLY ACCESS STATE -->
+    <div id="early-state">
+      <div class="early-label" data-i18n="early_label">Early access — current students</div>
+      <h1 data-i18n="early_h">Register for Sep 2026</h1>
+      <p class="subtitle" data-i18n="early_sub">Registration opens to everyone on <strong>20 May at midnight</strong>. Current students can register now with their access code.</p>
+      <div class="form">
+        <div class="input-wrap">
+          <input type="password" id="pw-input" data-i18n-placeholder="pw_placeholder" placeholder="Enter access code" autocomplete="off">
+        </div>
+        <button class="btn" onclick="checkPassword()" data-i18n="pw_btn">Continue →</button>
+        <div class="error-msg" id="error-msg"></div>
+      </div>
+      <div class="opens-note" data-i18n="opens_note">Opens for everyone in</div>
+      <div class="countdown" id="countdown">—</div>
+      <p class="age-note" data-i18n="age_note">Open to ages 12 and up · EN &amp; NL</p>
+    </div>
+
+    <!-- OPEN STATE -->
+    <div id="open-state" class="open-state">
+      <div class="open-label" data-i18n="open_label">Registration open</div>
+      <h1 data-i18n="open_h">Register for Sep 2026</h1>
+      <p class="subtitle" data-i18n="open_sub">Registration is now open to everyone. Choose your class and level below.</p>
+      <a class="open-btn" href="https://creatorapp.zohopublic.eu/developer_shoonyadance/shoonya-dance-studio/form-perma/Registration_Form/qTe3pCXurpemuBZnkQmKn0AG2a3TJGfqAGth6b3v61GG91y8DAPsBkhHBmTjYhPfK0sbPbb7UCRXryNV9QnybU04QBBjvnesRU3A" data-i18n="open_btn">Go to registration form →</a>
+      <div class="open-note" data-i18n="open_note">Questions? Email info@shoonyadance.com</div>
+      <p class="age-note" data-i18n="age_note">Open to ages 12 and up · EN &amp; NL</p>
+    </div>
+  </div>
+</main>
+
+<script>
+  const PASSWORD  = 'welkomterug';
+  const ZOHO_URL  = 'https://creatorapp.zohopublic.eu/developer_shoonyadance/shoonya-dance-studio/form-perma/Registration_Form/qTe3pCXurpemuBZnkQmKn0AG2a3TJGfqAGth6b3v61GG91y8DAPsBkhHBmTjYhPfK0sbPbb7UCRXryNV9QnybU04QBBjvnesRU3A';
+  const OPEN_DATE = new Date('2026-05-20T00:00:00+02:00');
+
+  function checkPassword() {
+    var input = document.getElementById('pw-input');
+    var err   = document.getElementById('error-msg');
+    if (input.value.trim().toLowerCase() === PASSWORD.toLowerCase()) {
+      window.location.href = ZOHO_URL;
+    } else {
+      input.classList.add('error');
+      err.textContent = 'Incorrect code. Try again.';
+      setTimeout(function() { input.classList.remove('error'); input.value = ''; }, 500);
+    }
+  }
+
+  document.getElementById('pw-input').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') checkPassword();
+  });
+
+  function init() {
+    var now = new Date();
+    if (now >= OPEN_DATE) {
+      document.getElementById('early-state').style.display = 'none';
+      document.getElementById('open-state').style.display  = 'flex';
+    } else {
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    }
+  }
+
+  function updateCountdown() {
+    var now  = new Date();
+    var diff = OPEN_DATE - now;
+    if (diff <= 0) { init(); return; }
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000)  / 60000);
+    var s = Math.floor((diff % 60000)    / 1000);
+    document.getElementById('countdown').textContent =
+      d + 'd ' + String(h).padStart(2,'0') + 'h ' + String(m).padStart(2,'0') + 'm ' + String(s).padStart(2,'0') + 's';
+  }
+
+  init();
+
+  var TR = {
+    en: {
+      early_label: "Early access — current students",
+      early_h: "Register for Sep 2026",
+      early_sub: "Registration opens to everyone on <strong>20 May at midnight</strong>. Current students can register now with their access code.",
+      pw_placeholder: "Enter access code",
+      pw_btn: "Continue →",
+      opens_note: "Opens for everyone in",
+      age_note: "Open to ages 12 and up · EN & NL",
+      open_label: "Registration open",
+      open_h: "Register for Sep 2026",
+      open_sub: "Registration is now open to everyone. Choose your class and level below.",
+      open_btn: "Go to registration form →",
+      open_note: "Questions? Email info@shoonyadance.com"
+    },
+    nl: {
+      early_label: "Vroege toegang — huidige studenten",
+      early_h: "Inschrijven voor sep 2026",
+      early_sub: "Inschrijving opent op <strong>20 mei om middernacht</strong> voor iedereen. Huidige studenten kunnen nu al inschrijven met hun toegangscode.",
+      pw_placeholder: "Voer toegangscode in",
+      pw_btn: "Doorgaan →",
+      opens_note: "Over voor iedereen",
+      age_note: "Toegankelijk vanaf 12 jaar · NL & EN",
+      open_label: "Inschrijving open",
+      open_h: "Inschrijven voor sep 2026",
+      open_sub: "Inschrijving is nu open voor iedereen. Kies je les en niveau hieronder.",
+      open_btn: "Naar het inschrijfformulier →",
+      open_note: "Vragen? Mail info@shoonyadance.com"
+    }
+  };
+
+  var NAV_LABELS = {
+    en: { about: 'About', studios: 'Studios', try: 'Try a class', register: 'Register', schedule: 'Schedule' },
+    nl: { about: 'Over ons', studios: "Studio's", try: 'Proefles', register: 'Inschrijven', schedule: 'Rooster' }
+  };
+
+  function applyLang(lang) {
+    var t = TR[lang];
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var k = el.getAttribute('data-i18n');
+      if (t[k] !== undefined) el.innerHTML = t[k];
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+      var k = el.getAttribute('data-i18n-placeholder');
+      if (t[k] !== undefined) el.placeholder = t[k];
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(b) {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+    var nav = NAV_LABELS[lang];
+    if (nav) {
+      document.getElementById('nav-about').textContent    = nav.about;
+      document.getElementById('nav-studios').textContent  = nav.studios;
+      document.getElementById('nav-try').textContent      = nav.try;
+      document.getElementById('nav-register').textContent = nav.register;
+      document.getElementById('nav-schedule').textContent = nav.schedule;
+    }
+    document.documentElement.lang = lang;
+    try { localStorage.setItem('shoonya-lang', lang); } catch(e) {}
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(function(b) {
+    b.addEventListener('click', function() { applyLang(b.dataset.lang); });
+  });
+
+  var savedLang = null;
+  try { savedLang = localStorage.getItem('shoonya-lang'); } catch(e) {}
+  applyLang(savedLang || (navigator.language.startsWith('nl') ? 'nl' : 'en'));
+</script>
+</body>
+</html>
