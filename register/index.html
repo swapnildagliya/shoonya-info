@@ -22,7 +22,74 @@
       "name": "Register — Shoonya Dance Centre",
       "url": "https://info.shoonyadance.com/register/",
       "description": "Registration hub for dance classes, workshops, miniseries, festivals, and events at Shoonya Dance Centre in Ghent.",
-      "isPartOf": { "@type": "WebSite", "name": "Shoonya Dance Centre", "url": "https://www.shoonyadance.com" }
+      "isPartOf": { "@type": "WebSite", "name": "Shoonya Dance Centre", "url": "https://www.shoonyadance.com" },
+      "author": {
+        "@type": "Person",
+        "name": "Swapnil Dagliya",
+        "jobTitle": "Artistic Director",
+        "worksFor": { "@id": "https://www.shoonyadance.com/#organization" }
+      }
+    },
+    {
+      "@type": "DanceGroup",
+      "@id": "https://www.shoonyadance.com/#organization",
+      "name": "Shoonya Dance Centre",
+      "legalName": "Shoonya Dance VZW",
+      "url": "https://www.shoonyadance.com",
+      "email": "info@shoonyadance.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Stapelplein 41",
+        "addressLocality": "Ghent",
+        "postalCode": "9000",
+        "addressCountry": "BE"
+      }
+    },
+    {
+      "@type": "Event",
+      "name": "Open Door Day — Shoonya Dance Centre",
+      "url": "https://www.shoonyadance.com/try-a-class/",
+      "startDate": "2026-06-14",
+      "endDate": "2026-06-14",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "description": "Free open day at Shoonya Dance Centre, Ghent. Drop in to any dance class for free — no booking needed.",
+      "isAccessibleForFree": true,
+      "organizer": { "@id": "https://www.shoonyadance.com/#organization" },
+      "location": {
+        "@type": "Place",
+        "name": "Shoonya Dance Centre",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Stapelplein 41",
+          "addressLocality": "Ghent",
+          "postalCode": "9000",
+          "addressCountry": "BE"
+        }
+      }
+    },
+    {
+      "@type": "Event",
+      "name": "Open Door Day — Shoonya Dance Centre (September)",
+      "url": "https://www.shoonyadance.com/try-a-class/",
+      "startDate": "2026-09-13",
+      "endDate": "2026-09-13",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "description": "Free open day at Shoonya Dance Centre ahead of the September 2026 semester. Drop in to any class for free — no booking needed.",
+      "isAccessibleForFree": true,
+      "organizer": { "@id": "https://www.shoonyadance.com/#organization" },
+      "location": {
+        "@type": "Place",
+        "name": "Shoonya Dance Centre",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Stapelplein 41",
+          "addressLocality": "Ghent",
+          "postalCode": "9000",
+          "addressCountry": "BE"
+        }
+      }
     },
     {
       "@type": "FAQPage",
@@ -197,6 +264,11 @@ body:not(.nl) [data-lang="nl"] { display: none; }
 
 /* ─── CARDS SECTION ─── */
 .cards-section { padding: 3.5rem 1.75rem; }
+.cards-intro {
+  font-size: .92rem; color: var(--muted);
+  line-height: 1.75; max-width: 680px;
+  margin-bottom: 2rem;
+}
 .cards-section__heading {
   font-family: 'Marcellus', serif; font-weight: 400;
   font-size: clamp(1.6rem, 3.5vw, 2.4rem);
@@ -442,9 +514,13 @@ body:not(.nl) [data-lang="nl"] { display: none; }
   <!-- THREE REGISTRATION CARDS -->
   <section class="cards-section" aria-labelledby="cards-heading">
     <h2 class="cards-section__heading" id="cards-heading">
-      <span data-lang="en">Three ways to register</span>
-      <span data-lang="nl">Drie manieren om in te schrijven</span>
+      <span data-lang="en">How do I register for dance classes at Shoonya?</span>
+      <span data-lang="nl">Hoe schrijf ik me in voor danslessen bij Shoonya?</span>
     </h2>
+    <p class="cards-intro">
+      <span data-lang="en">Shoonya Dance Centre uses three separate registration forms depending on what you're joining. For a weekly semester course (16 sessions, Sep 2026 – Jan 2027), use Form 1. For standalone workshops, miniseries, or intensives, use Form 2. For performance tickets and social events, use Form 3. All three require a free Shoonya ID.</span>
+      <span data-lang="nl">Shoonya Dance Centre gebruikt drie aparte formulieren afhankelijk van wat je wil volgen. Voor een wekelijkse semesterles (16 lessen, sep 2026 – jan 2027) gebruik je Formulier 1. Voor workshops, minireeksen of intensieven gebruik je Formulier 2. Voor tickets gebruik je Formulier 3. Alle drie vereisen een gratis Shoonya ID.</span>
+    </p>
     <div class="cards-grid">
 
       <!-- Card 1: Weekly classes -->
