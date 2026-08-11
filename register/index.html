@@ -319,13 +319,35 @@ body:not(.nl) [data-lang="nl"] { display: none; }
 .oh-text { flex: 1; min-width: 200px; }
 .oh-text strong { display: block; font-size: .97rem; font-weight: 700; margin-bottom: .2rem; }
 .oh-text span { font-size: .82rem; color: rgba(255,255,255,.6); }
-.oh-dates { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
+/* The date is the most actionable fact in this band, so it leads. It used to be
+   a 0.78rem outlined chip with cursor:default — the biggest thing on the right
+   was not a target, while the only link was the quiet grey "More info". The whole
+   group is now one link, and the time (which was missing entirely) is shown. */
+.oh-dates {
+  display: flex; flex-direction: column; align-items: flex-end;
+  gap: .15rem; text-align: right; text-decoration: none;
+  border-left: 1px solid rgba(255,255,255,.18); padding-left: 2.25rem;
+}
+.oh-dates:hover .oh-more { color: #fff; }
+.oh-dates:hover .oh-date-btn { color: var(--yellow); }
+.oh-day {
+  font-size: .7rem; font-weight: 700; letter-spacing: .16em;
+  text-transform: uppercase; color: rgba(255,255,255,.55);
+}
 .oh-date-btn {
-  padding: .55rem 1.1rem;
-  border: 1px solid rgba(255,255,255,.4); background: transparent;
-  font-family: 'PT Serif', serif; font-size: .78rem; font-weight: 700;
-  color: #fff; white-space: nowrap; cursor: default;
-  letter-spacing: .04em;
+  font-family: 'Marcellus', serif; font-size: 1.7rem; font-weight: 400;
+  line-height: 1.1; color: #fff; white-space: nowrap;
+  transition: color .15s;
+}
+.oh-when {
+  font-size: .82rem; color: rgba(255,255,255,.62);
+  letter-spacing: .02em; margin-bottom: .35rem;
+}
+.oh-when b { color: var(--yellow); font-weight: 700; }
+@media (max-width: 720px) {
+  .oh-dates { align-items: flex-start; text-align: left;
+              border-left: 0; padding-left: 0;
+              border-top: 1px solid rgba(255,255,255,.18); padding-top: 1.25rem; }
 }
 .oh-more {
   font-size: .72rem; font-weight: 700; letter-spacing: .1em;
@@ -582,16 +604,21 @@ body:not(.nl) [data-lang="nl"] { display: none; }
         <span data-lang="nl">Geen reservering nodig — gewoon binnenlopen.</span>
       </span>
     </div>
-    <div class="oh-dates">
+    <a class="oh-dates" href="https://www.shoonyadance.com/calendar/opendeurdag-gratis-dansen-gent-13-september" target="_blank" rel="noopener">
+      <span class="oh-day">
+        <span data-lang="en">Sunday</span>
+        <span data-lang="nl">Zondag</span>
+      </span>
       <span class="oh-date-btn">
         <span data-lang="en">13 September 2026</span>
         <span data-lang="nl">13 september 2026</span>
       </span>
-      <a class="oh-more" href="https://www.shoonyadance.com/try-a-class/" target="_blank" rel="noopener">
-        <span data-lang="en">More info →</span>
-        <span data-lang="nl">Meer info →</span>
-      </a>
-    </div>
+      <span class="oh-when">10:00&ndash;17:00 &middot; <b><span data-lang="en">Free</span><span data-lang="nl">Gratis</span></b></span>
+      <span class="oh-more">
+        <span data-lang="en">More info &rarr;</span>
+        <span data-lang="nl">Meer info &rarr;</span>
+      </span>
+    </a>
   </div>
 
   <!-- FAQ -->
