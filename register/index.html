@@ -316,7 +316,12 @@ body:not(.nl) [data-lang="nl"] { display: none; }
   font-family: 'Marcellus', serif; font-size: 1.15rem;
   color: var(--yellow); white-space: nowrap;
 }
-.oh-text { flex: 1; min-width: 200px; }
+/* Was flex:1 — the box stretched to fill the band while the two short lines did
+   not, stranding the date block at the far edge with a void between them (worse
+   the wider the screen). Capped to its natural measure so the date sits with the
+   copy as one group; the band itself stays full-bleed like the cards above. */
+.oh-text { flex: 0 1 34rem; min-width: 200px; }
+.oh-band { justify-content: flex-start; }
 .oh-text strong { display: block; font-size: .97rem; font-weight: 700; margin-bottom: .2rem; }
 .oh-text span { font-size: .82rem; color: rgba(255,255,255,.6); }
 /* The date is the most actionable fact in this band, so it leads. It used to be
@@ -324,8 +329,8 @@ body:not(.nl) [data-lang="nl"] { display: none; }
    was not a target, while the only link was the quiet grey "More info". The whole
    group is now one link, and the time (which was missing entirely) is shown. */
 .oh-dates {
-  display: flex; flex-direction: column; align-items: flex-end;
-  gap: .15rem; text-align: right; text-decoration: none;
+  display: flex; flex-direction: column; align-items: flex-start;
+  gap: .15rem; text-align: left; text-decoration: none;
   border-left: 1px solid rgba(255,255,255,.18); padding-left: 2.25rem;
 }
 .oh-dates:hover .oh-more { color: #fff; }
